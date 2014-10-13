@@ -163,7 +163,7 @@ function TrafficLight(redTime, yellowTime, greenTime, debug) {
  * @param {object} event
  */
     TrafficLight.prototype.tramsubscribe = function (event) {
-        event.addListener('tram', function() {
+        event.on('tram', function() {
                             this.__tramcallback();
                         }.bind(this));
     };	
