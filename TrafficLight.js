@@ -184,4 +184,14 @@ function TrafficLight(redTime, yellowTime, greenTime, debug) {
     this.toGreen();
 }
 
-exports.TrafficLight = TrafficLight;
+var isNodeJS = function() {
+	if (typeof module !== 'undefined' && module.exports) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+if (isNodeJS()) {
+	exports.TrafficLight = TrafficLight;
+}
