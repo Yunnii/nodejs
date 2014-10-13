@@ -3,7 +3,10 @@ var http = require('http');
 var server = http.createServer();
 var tram = false;
 server.on('request', function(req, res) {
-			res.writeHeader(200,{'Content-Type': 'text/plain'});
+			res.writeHeader(200,{
+								'Content-Type': 'text/plain',
+								'Access-Control-Allow-Origin': '*'
+								});
 			res.write(tram.toString());
 			res.end();
 		});
