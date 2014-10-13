@@ -1,0 +1,9 @@
+{
+  "name": "Tram-server",
+  "description": "Second task CRI",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "4.x"
+  }
+}
