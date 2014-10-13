@@ -36,7 +36,7 @@ function TrafficLight(redTime, yellowTime, greenTime, debug) {
 	TrafficLight.prototype.__debuglog = function (message) {
 		if (this.__debug) 
 			console.log(message);
-	}
+	};
 
 
 /**
@@ -190,7 +190,7 @@ var isNodeJS = function() {
 	} else {
 		return false;
 	}
-}
+};
 
 if (isNodeJS()) {
 	exports.TrafficLight = TrafficLight;

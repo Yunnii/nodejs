@@ -79,7 +79,7 @@ var isNodeJS = function() {
 	} else {
 		return false;
 	}
-}
+};
 
 if (isNodeJS()) {
 	exports.EventEmitter = EventEmitter;
