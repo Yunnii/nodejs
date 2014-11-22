@@ -1,27 +1,4 @@
-var config =
-{
-    timeout :
-    {
-        green 	: 6000,
-        yellow 	: 2000,
-        red		: 6000
-    },
-    order :
-        [
-            'green', 'yellow', 'red'
-        ],
-    tram :
-    {
-        wait  : 3000,
-        time  : 10000,
-        smart : 0.3
-    }
-};
-
-var lights = new Lights(config);
-
-var tramEvent = new EventEmitter();
-lights.startListenTram(tramEvent);
+var currentColor = null;
 
 var xmlHttp = new HttpRequest();
 xmlHttp.create();
@@ -29,12 +6,8 @@ xmlHttp.create();
 setInterval(function()
 {
     xmlHttp.getRequest('http://localhost:3000/', function(response) {
-        if (response == 'true') {
-            tramEvent.emit('tram');
-        }
+        currentColor = response;
     });
-
-    var currentColor = lights.state();
 
     switch(currentColor)
     {
