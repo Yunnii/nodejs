@@ -46,5 +46,5 @@ var isNodeJS = function() {
 };
 
 if (isNodeJS()) {
-    exports.XMLHttpRequest = XMLHttpRequest;
+    exports.HttpRequest = HttpRequest;
 }
